@@ -1,8 +1,6 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { TestModule } from './test/test.module';
+import { Poll } from './test.entity';
 
 @Module({
   imports: [
@@ -13,12 +11,12 @@ import { TestModule } from './test/test.module';
       username: 'postgres',
       password: 'postgres',
       database: 'traactlocal',
-      entities: [],
+      entities: [Poll],
       synchronize: true,
     }),
-    TestModule,
+    TypeOrmModule.forFeature([Poll]),
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  providers: [],
+  controllers: [],
 })
-export class AppModule {}
+export class TestModule {}
