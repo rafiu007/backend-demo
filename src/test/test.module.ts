@@ -19,4 +19,4 @@ import { Poll } from './test.entity';
   providers: [],
   controllers: [],
 })
-export class AppModule {}
+export class TestModule {}
