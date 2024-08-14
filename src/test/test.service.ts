@@ -16,4 +16,9 @@ export class TestService {
 
     return 'Polls';
   }
+
+  async postHello(): Promise<string> {
+    const resp = await this.testRepository.savePoll();
+    return resp.question;
+  }
 }
