@@ -4,7 +4,7 @@ import { ApiTags } from '@nestjs/swagger';
 
 @Controller('test')
 @ApiTags('test')
-export class DepartmentsController {
+export class TestsController {
   constructor(private testService: TestService) {}
 
   @Get()

@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Poll } from './test.entity';
 import { TestRepository } from './test.repository';
 import { TestService } from './test.service';
+import { TestsController } from './test.controller';
 
 @Module({
   imports: [
@@ -19,7 +20,7 @@ import { TestService } from './test.service';
     TypeOrmModule.forFeature([Poll]),
   ],
   providers: [TestRepository, TestService],
-  exports: [TestRepository, TestService],
-  controllers: [],
+  exports: [TestRepository, TestService, TestsController],
+  controllers: [TestsController],
 })
 export class TestModule {}
