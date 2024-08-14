@@ -4,16 +4,19 @@ import { Poll } from './test.entity';
 
 @Injectable()
 export class TestRepository extends Repository<Poll> {
-  constructor(
-    private dataSource: DataSource,
-    private readonly logger = new Logger(TestRepository.name),
-  ) {
+  private readonly logger = new Logger(TestRepository.name);
+
+  constructor(dataSource: DataSource) {
     super(Poll, dataSource.createEntityManager());
   }
 
   async getPolls(): Promise<Poll[]> {
     try {
-      return this.find();
+      const a = await this.find();
+      if (a) {
+        return a;
+      }
+      return [];
     } catch (e) {
       this.logger.error(e);
       throw e;
