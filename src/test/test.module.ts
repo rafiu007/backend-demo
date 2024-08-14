@@ -20,7 +20,7 @@ import { TestsController } from './test.controller';
     TypeOrmModule.forFeature([Poll]),
   ],
   providers: [TestRepository, TestService],
-  exports: [TestRepository, TestService, TestsController],
+  exports: [TestRepository, TestService],
   controllers: [TestsController],
 })
 export class TestModule {}
