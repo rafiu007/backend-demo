@@ -7,9 +7,9 @@ import { ApiTags } from '@nestjs/swagger';
 export class TestsController {
   constructor(private testService: TestService) {}
 
-  @Get()
-  getHello(): Promise<string> {
-    return this.testService.getHello();
+  @Get('claims')
+  testForInterview(): Promise<string> {
+    return this.testService.getClaims();
   }
 
   @Post()
