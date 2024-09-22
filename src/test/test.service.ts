@@ -7,26 +7,6 @@ const END_POINT =
 
 const AUTH_HEADER = 'Bearer claims_are_fun';
 
-const sampleBody = {
-  page_number: 1,
-};
-
-const sample_response = {
-  claims: [
-    {
-      claim_id: '123',
-      amount: 500.0,
-      description: 'Vet visit',
-    },
-    {
-      claim_id: '124',
-      amount: 100.0,
-      description: 'Routine checkup',
-    },
-  ],
-  has_more: true, // Indicates if there are more pages
-};
-
 @Injectable()
 export class TestService {
   private readonly logger = new Logger(TestService.name);
