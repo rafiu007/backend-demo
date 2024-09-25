@@ -1,6 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { TestRepository } from './test.repository';
+import { ClaimForm } from './interface';
 
 const END_POINT =
   'https://us-central1-claimsorted-interviews.cloudfunctions.net/fetchClaims';
