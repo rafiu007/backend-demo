@@ -4,7 +4,7 @@ import {
   Column,
   CreateDateColumn,
 } from 'typeorm';
-import { ClaimType } from './interface';
+import { ClaimStatus, ClaimType } from './interface';
 
 @Entity('claims_form')
 export class Form {
@@ -29,6 +29,10 @@ export class Form {
 
   @Column({ nullable: false, type: 'date' })
   dateOfIncident: string;
+
+  //status
+  @Column({ nullable: false, default: ClaimStatus.PENDING })
+  status: ClaimStatus;
 
   @CreateDateColumn()
   createdAt: Date;
