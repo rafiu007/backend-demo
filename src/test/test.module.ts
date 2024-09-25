@@ -19,10 +19,10 @@ import { FormRepository } from './forms.repository';
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      entities: [Poll],
+      entities: [Poll, Form],
       synchronize: true, // Set to false in production
     }),
-    TypeOrmModule.forFeature([Poll]),
+    TypeOrmModule.forFeature([Poll, Form]),
   ],
   providers: [TestRepository, TestService, FormService, FormRepository],
   exports: [TestRepository, TestService, FormService, FormRepository],

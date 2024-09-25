@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 import { ClaimType } from './interface';
 
-@Entity()
+@Entity('claims_form')
 export class Form {
   @PrimaryGeneratedColumn()
   id: number;
