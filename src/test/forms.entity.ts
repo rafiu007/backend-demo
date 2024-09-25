@@ -31,7 +31,7 @@ export class Form {
   dateOfIncident: string;
 
   //status
-  @Column({ nullable: false })
+  @Column({ nullable: false, default: ClaimStatus.PENDING })
   status: ClaimStatus;
 
   @CreateDateColumn()
