@@ -5,6 +5,9 @@ import { Poll } from './test.entity';
 import { TestRepository } from './test.repository';
 import { TestService } from './test.service';
 import { TestsController } from './test.controller';
+import { Form } from './forms.entity';
+import { FormService } from './forms.service';
+import { FormRepository } from './forms.repository';
 
 @Module({
   imports: [
@@ -21,8 +24,8 @@ import { TestsController } from './test.controller';
     }),
     TypeOrmModule.forFeature([Poll]),
   ],
-  providers: [TestRepository, TestService],
-  exports: [TestRepository, TestService],
+  providers: [TestRepository, TestService, FormService, FormRepository],
+  exports: [TestRepository, TestService, FormService, FormRepository],
   controllers: [TestsController],
 })
 export class TestModule {}
