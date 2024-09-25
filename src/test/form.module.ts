@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config'; // Add this for .env support
-import { Poll } from './test.entity';
-import { TestRepository } from './test.repository';
-import { TestService } from './test.service';
-import { TestsController } from './test.controller';
+
 import { Form } from './forms.entity';
 import { FormService } from './forms.service';
 import { FormRepository } from './forms.repository';
+import { Poll } from './test.entity';
+import { Test } from '@nestjs/testing';
+import { TestsController } from './test.controller';
 
 @Module({
   imports: [
@@ -24,8 +24,8 @@ import { FormRepository } from './forms.repository';
     }),
     TypeOrmModule.forFeature([Poll, Form]),
   ],
-  providers: [TestRepository, TestService, FormService, FormRepository],
-  exports: [TestRepository, TestService, FormService, FormRepository],
+  providers: [FormService, FormRepository],
+  exports: [FormService, FormRepository],
   controllers: [TestsController],
 })
 export class TestModule {}
