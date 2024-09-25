@@ -1,4 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
+} from 'typeorm';
 import { ClaimType } from './interface';
 
 @Entity('claims_form')
@@ -24,4 +29,7 @@ export class Form {
 
   @Column({ nullable: false, type: 'date' })
   dateOfIncident: string;
+
+  @CreateDateColumn()
+  createdAt: Date;
 }
