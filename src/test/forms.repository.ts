@@ -8,7 +8,7 @@ export class FormRepository extends Repository<Form> {
   private readonly logger = new Logger(FormRepository.name);
 
   constructor(dataSource: DataSource) {
-    super(Poll, dataSource.createEntityManager());
+    super(Form, dataSource.createEntityManager());
   }
 
   async getPolls(): Promise<Form[]> {
