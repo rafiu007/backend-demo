@@ -6,6 +6,8 @@ import { Form } from './forms.entity';
 import { FormService } from './forms.service';
 import { FormRepository } from './forms.repository';
 import { Poll } from './test.entity';
+import { Test } from '@nestjs/testing';
+import { TestsController } from './test.controller';
 
 @Module({
   imports: [
@@ -22,8 +24,8 @@ import { Poll } from './test.entity';
     }),
     TypeOrmModule.forFeature([Poll, Form]),
   ],
-  providers: [, , FormService, FormRepository],
-  exports: [, , FormService, FormRepository],
-  controllers: [],
+  providers: [FormService, FormRepository],
+  exports: [FormService, FormRepository],
+  controllers: [TestsController],
 })
 export class TestModule {}
